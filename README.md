@@ -25,7 +25,14 @@
 | Platform | File | Notes |
 | --- | --- | --- |
 | 🪟 **Windows (universal)** | `xryloth_vX.Y.Z.W_windows_universal.exe` | Single portable installer — no setup required |
-| 🐧 **Linux (Debian/Ubuntu)** | `xryloth_vX.Y.Z.W_linux.Deb` | `sudo apt install ./…Deb` or `sudo dpkg -i` |
+| 🪟 **Windows (32-bit)** | `xryloth_vX.Y.Z.W_windows32.exe` | For 32-bit Windows only |
+| 🐧 **Linux (Debian/Ubuntu)** | `xryloth_vX.Y.Z.W_linux.deb` | `sudo apt install ./…deb` or `sudo dpkg -i` |
+
+> **The asset filename is part of the interface — always keep the extension lowercase.**
+> GNOME Software only recognises the lowercase `*.deb` suffix; a capital `.Deb` will not
+> open on double-click (`no application was created for running file-to-app on
+> plugin=packagekit`). GitHub also compares asset names case-insensitively, so `.deb` and
+> `.Deb` cannot coexist on the same release.
 
 ---
 
@@ -37,7 +44,7 @@ When you run the installer the first time:
 2. **Requirements check** — it verifies everything Xryloth needs (for example **Java 21**, Java 17, curl, VC++ runtime, `libfuse2`).
    - Each item shows **Checking → Found** or **Not Found**.
    - Anything missing gets an **Install** button that fetches it live (winget / apt, or a direct download).
-3. **Install** — it creates the hidden `.xryloth` folder, writes a `Status.txt` control file, drops a **desktop shortcut** for the installer, and downloads the launcher from [`EscapeXMc/xryloth`](https://github.com/EscapeXMc/xryloth) as `launcher.exe` / `launcher.AppImage`.
+3. **Install** — it creates the hidden `.xryloth` folder, writes a `Status.txt` control file, drops a **desktop shortcut** for the installer, and downloads the launcher from [`EscapeXMc/xryloth`](https://github.com/EscapeXMc/xryloth) as `launcher.exe` / `launcher.appImage`.
 
 After that, the same file becomes an **updater**:
 
